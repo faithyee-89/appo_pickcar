@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="loginCarPlatform"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="登录车载平台接口" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="callCar"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="叫车" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="pickOrder"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="接单" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="arriveStart"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="到达出发地" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="getOnCar"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="乘客已上车" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="arriveEnd"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="到达目的地" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="payOrder"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="支付订单" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
