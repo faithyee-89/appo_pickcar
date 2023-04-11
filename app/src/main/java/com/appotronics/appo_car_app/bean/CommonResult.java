@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class CommonResult {
 
-
     private Integer code;
     private List<?> data;
     private String msg;

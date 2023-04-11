@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
     private var isLoginCarPlatform: Boolean = false
     private var isCallCar: Boolean = false
     private var isTest: String = "2"//1走开发线路 0走胡工演示线路 2我自己用
+    private var targetGsn : String = "dce9ddc7-fe81-483f-9ec4-6f78f34a3066" //APPO-000006 投影机X2000_cn
+//    private var targetGsn : String = "f56d3bdd-a082-4852-89ec-6f3229e8df27" //APPO-000007
+//    private var targetGsn : String = "9c2f153d-7837-4e29-9b7a-5a2a2e7cc1f1" //APPO-000002 我自己用
+//    ""//
 
     fun initHttpConfig() {
         var logging = HttpLoggingInterceptor()
@@ -71,7 +75,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "请先登录打车平台", Toast.LENGTH_SHORT).show()
             return
         }
-        val login = retrofit?.create(DidiService::class.java)?.callCar(token, "深圳湾总部大厦", "联合总部大厦", isTest)
+        val login =
+            retrofit?.create(DidiService::class.java)?.callCar(token, "深圳湾总部大厦", "联合总部大厦", isTest)
         login?.enqueue(object : Callback<CallCarResult> {
             override fun onResponse(call: Call<CallCarResult>, response: Response<CallCarResult>) {
                 MqttLogUtils.i("${response.body()?.msg}")
@@ -159,6 +164,58 @@ class MainActivity : AppCompatActivity() {
             return
         }
         val login = retrofit?.create(DidiService::class.java)?.payOrder(token, orderId, isTest)
+        login?.enqueue(object : Callback<CommonResult> {
+            override fun onResponse(call: Call<CommonResult>, response: Response<CommonResult>) {
+                MqttLogUtils.i("${response.body()?.msg}")
+            }
+
+            override fun onFailure(call: Call<CommonResult>, t: Throwable) {
+                MqttLogUtils.i(t.message)
+            }
+        })
+    }
+
+    fun mediaTempV1(view: View?) {
+        val login = retrofit?.create(DidiService::class.java)?.sendMediaTemp(targetGsn, "gf_01")
+        login?.enqueue(object : Callback<CommonResult> {
+            override fun onResponse(call: Call<CommonResult>, response: Response<CommonResult>) {
+                MqttLogUtils.i("${response.body()?.msg}")
+            }
+
+            override fun onFailure(call: Call<CommonResult>, t: Throwable) {
+                MqttLogUtils.i(t.message)
+            }
+        })
+    }
+
+    fun mediaTempV2(view: View?) {
+        val login = retrofit?.create(DidiService::class.java)?.sendMediaTemp(targetGsn, "gf_02")
+        login?.enqueue(object : Callback<CommonResult> {
+            override fun onResponse(call: Call<CommonResult>, response: Response<CommonResult>) {
+                MqttLogUtils.i("${response.body()?.msg}")
+            }
+
+            override fun onFailure(call: Call<CommonResult>, t: Throwable) {
+                MqttLogUtils.i(t.message)
+            }
+        })
+    }
+
+    fun mediaTempV3(view: View?) {
+        val login = retrofit?.create(DidiService::class.java)?.sendMediaTemp(targetGsn, "gf_03")
+        login?.enqueue(object : Callback<CommonResult> {
+            override fun onResponse(call: Call<CommonResult>, response: Response<CommonResult>) {
+                MqttLogUtils.i("${response.body()?.msg}")
+            }
+
+            override fun onFailure(call: Call<CommonResult>, t: Throwable) {
+                MqttLogUtils.i(t.message)
+            }
+        })
+    }
+
+    fun mediaTempV4(view: View?) {
+        val login = retrofit?.create(DidiService::class.java)?.sendMediaTemp(targetGsn, "gf_04")
         login?.enqueue(object : Callback<CommonResult> {
             override fun onResponse(call: Call<CommonResult>, response: Response<CommonResult>) {
                 MqttLogUtils.i("${response.body()?.msg}")

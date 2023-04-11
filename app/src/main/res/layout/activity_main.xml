@@ -82,6 +82,42 @@
                 android:paddingVertical="6dp"
                 android:text="支付订单" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="mediaTempV1"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="临时发送内容给设备1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="mediaTempV2"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="临时发送内容给设备2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="mediaTempV3"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="临时发送内容给设备3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="mediaTempV4"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="6dp"
+                android:text="临时发送内容给设备4" />
+
         </LinearLayout>
 
     </ScrollView>

@@ -70,4 +70,12 @@ public interface DidiService {
             @Field("opt") String opt
     );
 
+    @POST("driver/send_media_temp")
+    @FormUrlEncoded
+    Call<CommonResult> sendMediaTemp(
+            @Field("gsn") String gsn,
+            @Field("file_name") String file_name
+    );
+
+
 }
