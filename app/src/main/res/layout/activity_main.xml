@@ -18,15 +18,31 @@
             android:gravity="center"
             android:orientation="vertical">
 
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_marginTop="30dp"
-                android:onClick="loginCarPlatform"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="6dp"
-                android:text="登录车载平台接口" />
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loginCarPlatform"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="6dp"
+                    android:text="登录网约车" />
+
+                <Button
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loginPrivateCar"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="6dp"
+                    android:text="登录私家车" />
+
+
+            </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"
@@ -83,6 +99,7 @@
                 android:text="支付订单" />
 
             <Button
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -92,6 +109,7 @@
                 android:text="临时发送内容给设备1" />
 
             <Button
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -101,6 +119,7 @@
                 android:text="临时发送内容给设备2" />
 
             <Button
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -110,6 +129,7 @@
                 android:text="临时发送内容给设备3" />
 
             <Button
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

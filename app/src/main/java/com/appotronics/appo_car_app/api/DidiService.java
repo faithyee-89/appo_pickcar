@@ -18,6 +18,7 @@ public interface DidiService {
     Call<LoginResult> login(
         @Field("phone") String phone,
         @Field("type") String type,
+        @Field("car_type") String carType,
         @Field("opt") String opt
     );
 

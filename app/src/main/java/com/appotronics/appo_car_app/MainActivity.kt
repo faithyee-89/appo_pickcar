@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var orderId: String? = null
     private var isLoginCarPlatform: Boolean = false
     private var isCallCar: Boolean = false
-    private var isTest: String = "2"//1走开发线路 0走胡工演示线路 2我自己用
+    private var isTest: String = "1"//1走开发线路 0走胡工演示线路 2我自己用
     private var targetGsn : String = "dce9ddc7-fe81-483f-9ec4-6f78f34a3066" //APPO-000006 投影机X2000_cn
 //    private var targetGsn : String = "f56d3bdd-a082-4852-89ec-6f3229e8df27" //APPO-000007
 //    private var targetGsn : String = "9c2f153d-7837-4e29-9b7a-5a2a2e7cc1f1" //APPO-000002 我自己用
@@ -55,7 +55,23 @@ class MainActivity : AppCompatActivity() {
 
     fun loginCarPlatform(view: View?) {
         isLoginCarPlatform = false
-        val login = retrofit?.create(DidiService::class.java)?.login("17512067574", "1", isTest)
+        val login = retrofit?.create(DidiService::class.java)?.login("17512067574", "1","1", isTest)
+        login?.enqueue(object : Callback<LoginResult> {
+            override fun onResponse(call: Call<LoginResult>, response: Response<LoginResult>) {
+                MqttLogUtils.i("${response}")
+                token = response.body()?.data?.token
+                isLoginCarPlatform = true
+            }
+
+            override fun onFailure(call: Call<LoginResult>, t: Throwable) {
+                MqttLogUtils.i(t.message)
+            }
+        })
+    }
+
+    fun loginPrivateCar(view : View?) {
+        isLoginCarPlatform = false
+        val login = retrofit?.create(DidiService::class.java)?.login("17512067574", "1","2", isTest)
         login?.enqueue(object : Callback<LoginResult> {
             override fun onResponse(call: Call<LoginResult>, response: Response<LoginResult>) {
                 MqttLogUtils.i("${response}")
